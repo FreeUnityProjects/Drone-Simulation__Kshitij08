@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
 
-public class Player_Setup : NetworkBehaviour
+public class Player_Setup: MonoBehaviour
 {
     [SerializeField]
     Behaviour[] componentsToDisable;
@@ -11,6 +11,7 @@ public class Player_Setup : NetworkBehaviour
     // Use this for initialization
     void Start()
     {
+        bool isLocalPlayer = true;
         if (!isLocalPlayer)
         {
             for (int i = 0; i < componentsToDisable.Length; i++)
